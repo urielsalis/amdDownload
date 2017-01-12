@@ -27,9 +27,9 @@ import static me.urielsalis.urielsalads.extensions.download.DownloadMain.*;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-@ExtensionAPI.Extension(name = "amd-download", version = "1.0.0", dependencies = {"download", "irc"}, id = "amd-download/1.0.0")
+@ExtensionAPI.Extension(name = "amd-download", version = "1.0.1", dependencies = {"download", "irc"}, id = "amd-download/1.0.1")
 public class Main {
-    @ExtensionAPI.ExtensionInit("amd-download/1.0.0")
+    @ExtensionAPI.ExtensionInit("amd-download/1.0.1")
     public static void initAMDDownloader(ExtensionAPI api) {
         try {
             api.registerListener("commandEvent", new CommandListener());
@@ -93,10 +93,10 @@ public class Main {
 
     }
 
-    @ExtensionAPI.ExtensionUnload("amd-download/1.0.0")
+    @ExtensionAPI.ExtensionUnload("amd-download/1.0.1")
     public static void unloadAMDDownloader(ExtensionAPI api) {
         try {
-            api.unregisterListener("commandEvent", "amd-download/1.0.0/CommandListener");
+            api.unregisterListener("commandEvent", "amd-download/1.0.1/CommandListener");
         } catch (ExtensionAPI.EventDoesntExistsException e) {
             e.printStackTrace();
         }
@@ -113,7 +113,7 @@ public class Main {
 
         @Override
         public String name() {
-            return "amd-download/1.0.0/CommandListener";
+            return "amd-download/1.0.1/CommandListener";
         }
     }
 
